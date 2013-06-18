@@ -311,7 +311,7 @@ var JSConsole = (function() {
                      }
                      return null;
                  }
-                 function initSDC() {
+                 function initConsole() {
                      var div_src = document.createElement('DIV');
                      var div_html = "<div style='margin:10; padding:5'><table width=\"100%\"><tbody><tr><td><button onclick=\"JSConsole.clearConsole();\" accesskey=\"c\" name=\"clear\"><span style=\"text-decoration: underline;\">C</span>lear</button>&nbsp;<input type=\"text\" onclick=\"JSConsole.clearScriptText();\" style=\"width: 850px;\" value=\"Enter your script\" name=\"evalText\" id=\"cmdBox\"/>&nbsp;<input type=\"button\" onclick=\"window.JSConsole.evalScript();\" value=\"Run\" name=\"eval\"/> </td> </tr> <tr> <td> <div style=\"border-style: ridge; overflow: auto; width: 1000px; float: left; height: 350px;\" id=\"log\"> </div></td> </tr> </tbody></table></div>";
 
@@ -333,7 +333,7 @@ var JSConsole = (function() {
                      evalScript: evalScript,
                      showError: expandErr,
                      explode: explode,
-                     initSDC: initSDC
+                     initConsole: initConsole
                  };
 })();
 
@@ -359,12 +359,12 @@ Array.prototype.remove = function(array) {
     return this;
 }
 
-Event.observe(window, 'load',  JSConsole.initSDC);
+Event.observe(window, 'load',  JSConsole.initConsole);
 
 
 /* ############################################################ */
 
-/* function initSDC() {
+/* function initConsole() {
     var div_src = document.createElement('DIV');
     var div_html = "<div style='margin:10; padding:5'><table width=\"100%\"><tbody><tr><td><button onclick=\"$('log').update('');\" accesskey=\"c\" name=\"clear\"><span style=\"text-decoration: underline;\">C</span>lear</button>&nbsp;<input type=\"text\" onclick=\"JSConsole.clearScriptText();\" style=\"width: 850px;\" value=\"Enter your script\" name=\"evalText\" id=\"cmdBox\"/>&nbsp;<input type=\"button\" onclick=\"window.JSConsole.evalScript();\" value=\"Run\" name=\"eval\"/> </td> </tr> <tr> <td> <div style=\"border-style: ridge; overflow: auto; width: 1000px; float: left; height: 350px;\" id=\"log\"> </div></td> </tr> </tbody></table></div>";
 
